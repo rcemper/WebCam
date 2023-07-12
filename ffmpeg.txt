@@ -1,0 +1,8 @@
+https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip
+
+https://ottverse.com/create-video-from-images-using-ffmpeg/
+
+C:\ZZ\_kits\ffmpeg-master-latest-win64-gpl-shared\bin\ffmpeg -framerate 2 -i 2023-06-21\*webcam.jpg 2023-06-21.mp4
+
+C:\GitHub\webcam\2023-06-22a>C:\ZZ\_kits\ffmpeg-master-latest-win64-gpl-shared\bin\ffmpeg -framerate 1/2 -i  "%03d.jpg" 2023-06-22b.mp4
+
