@@ -1,5 +1,13 @@
 @echo off
-rem :: aktuelles datum
+rem :: timeout zwischen bildern 
+ set _to=%1
+ if [%1]==[]  set /a _to=4
+rem :: dir %_dt%
+ set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
+rem :: aufräumen
+ del /F /Q webcamimage.jp* >nul 2>&1
+:loop
+rem :: aktuelles datum  ! mitternacht !
  set _dt=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
 rem :: ein verzeichnis pro tag
 if NOT exist %_dt% (
@@ -28,7 +36,6 @@ rem :: aktuelle id merken
  set _fi=%_id1:~-3,3%
  set _cpy=%_dt%\%_ts%\%_fi%.jpg
 2>nul md %_dt%\%_ts%
-set _
  copy webcamimage.jpg %_cpy% > nul
 rem :: file id ins tages-verzeichnis schieben
  move webcamimage.jpg %_fil% > nul
