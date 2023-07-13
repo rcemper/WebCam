@@ -1,7 +1,7 @@
 @echo off
-rem :: param %1 = framerate default=5
+rem :: param %1 = framerate default=8
 set _fr=%1
-if [%1]==[]  set /A _fr=12
+if [%1]==[]  set /A _fr=8
 echo *** video generieren ***
 set _day=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
 dir /b /A:D
