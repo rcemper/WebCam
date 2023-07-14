@@ -14,11 +14,6 @@ if NOT exist %_dt% (
  md %_dt% 
  echo -1 >%_dt%.txt
 )
-rem :: dir %_dt%
- set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
-rem :: aufräumen
- del /F /Q webcamimage.jp* >nul 2>&1
-:loop
 rem :: bild abholen
  %wget% -q -o -nd http://www.lkexca.com/camakt/webcamimage.jpg >nul 2>&1
 rem :: nächste file id 5stellig führende 0
