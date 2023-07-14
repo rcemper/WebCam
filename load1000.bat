@@ -14,9 +14,6 @@ if NOT exist %_dt% (
  md %_dt% 
  echo -1 >%_dt%.txt
 )
-rem :: timeout zwischen bildern 
- set _to=%1
- if [%1]==[]  set /a _to=4
 rem :: dir %_dt%
  set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
 rem :: aufräumen
