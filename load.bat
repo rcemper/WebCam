@@ -1,19 +1,18 @@
 @echo off
+rem :: timeout zwischen bildern 
+ set _to=%1
+ if [%1]==[]  set /a _to=4
 rem :: aktuelles datum
  set _dt=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
+ set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
+rem :: aufräumen
+ del /F /Q webcamimage.jp* >nul 2>&1
+:loop
 rem :: ein verzeichnis pro tag
 if NOT exist %_dt% (
  md %_dt% 
  echo -1 >%_dt%.txt
 )
-rem :: timeout zwischen bildern 
- set _to=%1
- if [%1]==[]  set /a _to=4
-rem :: dir %_dt%
- set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
-rem :: aufräumen
- del /F /Q webcamimage.jp* >nul 2>&1
-:loop
 rem :: bild abholen
  %wget% -q -o -nd http://www.lkexca.com/camakt/webcamimage.jpg >nul 2>&1
 rem :: nächste file id 5stellig führende 0
