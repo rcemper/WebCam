@@ -15,9 +15,9 @@ set /p _ts=<CON
 set _mp=%_day%_%_ts%_f%_fr%.mp4
 echo video %_mp% wird erstellt in %CD% mit %_fr% frame/sec
 cd %_day%\%_ts%
-rem:   dir /b
+dir /d
 pause
-set _ffmpeg=C:\ZZ\_kits\ffmpeg-master-latest-win64-gpl-shared\bin\ffmpeg
+set _ffmpeg=C:\WebCam\ffmpeg-master-latest-win64-gpl-shared\bin\ffmpeg
 2>nul %_ffmpeg% -framerate %_fr% -y -i  "%%03d.jpg" ..\..\%_mp% 
 cd ..\..
 dir /b *.mp4

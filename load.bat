@@ -2,12 +2,13 @@
 rem :: timeout zwischen bildern 
  set _to=%1
  if [%1]==[]  set /a _to=4
-rem :: aktuelles datum
- set _dt=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
+rem :: dir %_dt%
  set wget="C:\Program Files (x86)\GnuWin32\bin\wget"
 rem :: aufräumen
  del /F /Q webcamimage.jp* >nul 2>&1
 :loop
+rem :: aktuelles datum !  mitternacht !
+ set _dt=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
 rem :: ein verzeichnis pro tag
 if NOT exist %_dt% (
  md %_dt% 
